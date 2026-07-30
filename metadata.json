@@ -1,0 +1,6 @@
+{
+  "name": "powercalculator.info - Electrical & Solar Power Calculators",
+  "description": "The ultimate free online suite for electrical power, electricity cost, solar energy, battery runtime, wire size, voltage drop, and inverter calculators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
