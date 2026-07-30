@@ -236,30 +236,33 @@ export default function App() {
               </div>
 
               <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {categories.map((cat) => (
-                  <button
-                    key={cat.id}
-                    onClick={() => {
-                      setSelectedCategory(cat.id);
-                      setCurrentView('directory');
-                    }}
-                    className="p-5 bg-white border border-slate-200 rounded-2xl text-left hover:border-amber-400 hover:shadow-md transition space-y-2 group cursor-pointer"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${cat.badgeColor}`}>
-                        {cat.calculatorCount} Calculators
-                      </span>
-                    </div>
+                {categories.map((cat) => {
+                  const count = getCalculatorsByCategory(cat.id).length;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => {
+                        setSelectedCategory(cat.id);
+                        setCurrentView('directory');
+                      }}
+                      className="p-5 bg-white border border-slate-200 rounded-2xl text-left hover:border-amber-400 hover:shadow-md transition space-y-2 group cursor-pointer"
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${cat.badgeColor}`}>
+                          {count} {count === 1 ? 'Calculator' : 'Calculators'}
+                        </span>
+                      </div>
 
-                    <h3 className="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">
-                      {cat.name}
-                    </h3>
+                      <h3 className="font-bold text-slate-900 text-sm group-hover:text-amber-600 transition-colors">
+                        {cat.name}
+                      </h3>
 
-                    <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
-                      {cat.description}
-                    </p>
-                  </button>
-                ))}
+                      <p className="text-slate-500 text-xs leading-relaxed line-clamp-2">
+                        {cat.description}
+                      </p>
+                    </button>
+                  );
+                })}
               </div>
             </section>
 
@@ -383,7 +386,7 @@ export default function App() {
                     <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                       <div>
                         <span className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${cat.badgeColor}`}>
-                          {cat.calculatorCount} Tools
+                          {categoryCalcs.length} {categoryCalcs.length === 1 ? 'Tool' : 'Tools'}
                         </span>
                         <h2 className="font-extrabold text-slate-900 text-lg mt-1">{cat.name}</h2>
                       </div>

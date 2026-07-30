@@ -1161,10 +1161,25 @@ const extraCalculators: Partial<Calculator>[] = [
   { id: 'series-parallel-battery-bank', title: 'Series vs Parallel Battery Bank Configuration Tool', categoryId: 'battery-systems', shortDescription: 'Determine total voltage and capacity when wiring multiple batteries in series or parallel strings.' },
   { id: 'battery-state-of-charge-voltage', title: 'Battery State-Of-Charge (SoC) Voltage Chart Calculator', categoryId: 'battery-systems', shortDescription: 'Estimate remaining battery percentage based on resting open-circuit voltage for Lead-Acid & LiFePO4.' },
 
+  // Inverters & Converters
+  { id: 'pure-vs-modified-sine-wave', title: 'Pure vs Modified Sine Wave Efficiency Calculator', categoryId: 'inverters-converters', shortDescription: 'Calculate efficiency losses and heat dissipation between pure sine and modified sine wave inverters.' },
+  { id: 'inverter-dc-input-current', title: 'Inverter DC Input Current & Cable Sizing Calculator', categoryId: 'inverters-converters', shortDescription: 'Calculate heavy continuous DC amperage drawn from battery banks to power AC inverter loads.' },
+  { id: 'inverter-idle-draw-consumption', title: 'Inverter Idle Self-Consumption Calculator', categoryId: 'inverters-converters', shortDescription: 'Calculate daily battery drain from inverter standby and idle power draw.' },
+
   // Wire & Cable
   { id: 'conduit-fill-calculator', title: 'Conduit Fill Percentage & Cable Capacity Calculator', categoryId: 'wire-cable', shortDescription: 'Calculate NEC compliant conduit fill percentages for EMT, PVC, and Rigid metal conduits.' },
   { id: 'cable-temperature-derating', title: 'Cable Ampacity & Temperature Derating Calculator', categoryId: 'wire-cable', shortDescription: 'Adjust wire ampacity limits for elevated ambient temperatures and conduit bundling.' },
   { id: 'metric-mm2-to-awg-converter', title: 'Metric Wire Size (mm²) to AWG Gauge Converter', categoryId: 'wire-cable', shortDescription: 'Convert European metric wire cross-sectional area (mm²) to US AWG wire gauges.' },
+
+  // Generators & Backup
+  { id: 'generator-motor-surge-calculator', title: 'Generator Motor Starting Surge & LRA Calculator', categoryId: 'generators-backup', shortDescription: 'Determine starting surge kW required for AC compressors and pump induction motors.' },
+  { id: 'generator-dual-fuel-propane-vs-gas', title: 'Dual Fuel Propane vs Gasoline Generator Runtime', categoryId: 'generators-backup', shortDescription: 'Compare fuel efficiency, runtime, and cost between propane tanks and gasoline generators.' },
+  { id: 'generator-transfer-switch-sizing', title: 'Manual Transfer Switch & Interlock Kit Amperage Sizing', categoryId: 'generators-backup', shortDescription: 'Size transfer switch amperage ratings for main panel home backup generator connections.' },
+
+  // UPS & Critical Power
+  { id: 'server-rack-pdu-load-calculator', title: 'Server Rack PDU Load & Circuit Capacity Calculator', categoryId: 'ups-power', shortDescription: 'Calculate total power consumption and phase balance for data center server rack PDUs.' },
+  { id: 'ups-va-to-watts-pf', title: 'UPS Volt-Amps (VA) to Watts & Power Factor Converter', categoryId: 'ups-power', shortDescription: 'Convert UPS VA capacity ratings to real power output in Watts based on power factor.' },
+  { id: 'network-closet-poe-budget', title: 'Network Closet PoE Power Budget & UPS Runtime', categoryId: 'ups-power', shortDescription: 'Calculate PoE switch wattage draw and battery runtime for security cameras and access points.' },
 
   // Engineering & Circuits
   { id: '3-phase-power-calculator', title: '3-Phase Power (kW, kVA, Amps) Calculator', categoryId: 'electrical-engineering', shortDescription: 'Calculate line-to-line current, active power, and apparent power for balanced 3-phase AC systems.' },
@@ -1175,10 +1190,20 @@ const extraCalculators: Partial<Calculator>[] = [
   // Home HVAC
   { id: 'space-heater-cost-calculator', title: 'Electric Space Heater Cost & Safety Sizing', categoryId: 'home-hvac', shortDescription: 'Calculate hourly and monthly running costs of 750W, 1000W, and 1500W electric space heaters.' },
   { id: 'water-heater-electricity-cost', title: 'Water Heater Power Consumption & Tank Sizing', categoryId: 'home-hvac', shortDescription: 'Estimate electricity usage for electric tank water heaters vs tankless heat pumps.' },
-  
+  { id: 'heat-pump-cop-seer2-cost', title: 'Heat Pump SEER2 & COP Running Cost Calculator', categoryId: 'home-hvac', shortDescription: 'Compare heating and cooling operating costs for mini-split heat pumps based on SEER2 rating.' },
+
+  // EV Charging
+  { id: 'level-1-vs-level-2-ev-charging', title: 'Level 1 vs Level 2 EV Charging Speed & Cost', categoryId: 'ev-charging', shortDescription: 'Compare 120V 12A vs 240V 48A electric vehicle charging times and panel load impact.' },
+  { id: 'ev-cost-per-mile-vs-gas', title: 'EV Cost Per Mile vs Gas Vehicle Savings Calculator', categoryId: 'ev-charging', shortDescription: 'Calculate monthly fuel savings when switching from gasoline cars to an electric vehicle.' },
+
+  // Power Factor
+  { id: 'kvar-capacitor-bank-sizing', title: 'kVAR Capacitor Bank Sizing Calculator', categoryId: 'power-factor', shortDescription: 'Size power factor correction capacitor banks to eliminate utility low power factor penalties.' },
+  { id: 'power-triangle-kva-kw-kvar', title: 'Power Triangle (kVA, kW, kVAR) Calculator', categoryId: 'power-factor', shortDescription: 'Calculate real power, reactive power, and apparent power in AC electrical distribution.' },
+
   // Safety
   { id: 'grounding-electrode-wire-size', title: 'Grounding Electrode Wire Size (NEC 250.66)', categoryId: 'safety-protection', shortDescription: 'Determine required grounding electrode conductor (GEC) wire size based on service entrance conductors.' },
-  { id: 'short-circuit-fault-current', title: 'Short Circuit Fault Current & Available AIC Calculator', categoryId: 'safety-protection', shortDescription: 'Estimate available short circuit fault current (KAIC) at main electrical service panels.' }
+  { id: 'short-circuit-fault-current', title: 'Short Circuit Fault Current & Available AIC Calculator', categoryId: 'safety-protection', shortDescription: 'Estimate available short circuit fault current (KAIC) at main electrical service panels.' },
+  { id: 'continuous-load-80-percent-rule', title: 'NEC 80% Continuous Load Breaker Sizing Tool', categoryId: 'safety-protection', shortDescription: 'Apply NEC 80% continuous rating rules to properly size branch circuit breakers and conductors.' }
 ];
 
 // Combine base and supplementary database entries to ensure 100+ calculators are indexed
