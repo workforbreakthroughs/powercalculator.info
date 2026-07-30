@@ -35,7 +35,106 @@ export default function App() {
   // Auto scroll to top when changing views
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentView]);
+  }, [currentView, activeCalculator]);
+
+  // --- URL Routing, Deep Linking & SPA AdSense Pageview Tracker ---
+  // Read initial route from URL search params on mount
+  useEffect(() => {
+    const parseUrlRoute = () => {
+      const params = new URLSearchParams(window.location.search);
+      const calcParam = params.get('calc');
+      const categoryParam = params.get('category');
+      const viewParam = params.get('view');
+      const articleParam = params.get('article');
+
+      if (calcParam) {
+        const foundCalc = allCalculators.find(
+          (c) => c.id === calcParam || c.slug === calcParam
+        );
+        if (foundCalc) {
+          setActiveCalculator(foundCalc);
+          setCurrentView('calculator');
+          return;
+        }
+      }
+
+      if (categoryParam) {
+        setSelectedCategory(categoryParam);
+        setCurrentView('directory');
+        return;
+      }
+
+      if (articleParam) {
+        setSelectedArticleSlug(articleParam);
+        setCurrentView('articles');
+        return;
+      }
+
+      if (viewParam) {
+        setCurrentView(viewParam);
+        return;
+      }
+    };
+
+    parseUrlRoute();
+
+    // Listen to browser Back/Forward navigation buttons
+    const handlePopState = () => {
+      parseUrlRoute();
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Sync state changes to URL & document title & trigger SPA virtual pageview
+  useEffect(() => {
+    const params = new URLSearchParams();
+    let title = 'VoltCalc - Electrical & Energy Calculators';
+
+    if (currentView === 'calculator' && activeCalculator) {
+      params.set('calc', activeCalculator.id);
+      title = `${activeCalculator.title} - VoltCalc`;
+    } else if (currentView === 'directory' && selectedCategory) {
+      params.set('category', selectedCategory);
+      title = `${selectedCategory.toUpperCase().replace('-', ' ')} Calculators - VoltCalc`;
+    } else if (currentView === 'articles' && selectedArticleSlug) {
+      params.set('article', selectedArticleSlug);
+      title = `Electrical Engineering & Energy Guide - VoltCalc`;
+    } else if (currentView && currentView !== 'home') {
+      params.set('view', currentView);
+      title = `${currentView.charAt(0).toUpperCase() + currentView.slice(1)} - VoltCalc`;
+    }
+
+    const newQuery = params.toString() ? `?${params.toString()}` : window.location.pathname;
+    
+    // Only update history if changed
+    if (window.location.search !== (params.toString() ? `?${params.toString()}` : '')) {
+      window.history.pushState({ currentView, calcId: activeCalculator?.id }, '', newQuery);
+    }
+
+    document.title = title;
+
+    // --- Google AdSense & Analytics SPA Virtual Pageview Notification ---
+    if (typeof window !== 'undefined') {
+      // Notify Google Tag Manager / Analytics if present
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'page_view', {
+          page_path: newQuery,
+          page_title: title,
+        });
+      }
+
+      // AdSense SPA page view refresh trigger
+      try {
+        if ((window as any).adsbygoogle) {
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        }
+      } catch (e) {
+        // Safe fallback if adsbygoogle is not loaded
+      }
+    }
+  }, [currentView, activeCalculator, selectedCategory, selectedArticleSlug]);
 
   // Search & Filters State
   const [searchQuery, setSearchQuery] = useState<string>('');
