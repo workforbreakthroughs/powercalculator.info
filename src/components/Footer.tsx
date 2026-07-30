@@ -115,11 +115,6 @@ export const Footer: React.FC<FooterProps> = ({
                   <Mail className="w-3 h-3 text-stone-500" /> Contact & Support
                 </button>
               </li>
-              <li>
-                <button onClick={onOpenAdsenseModal} className="hover:text-amber-400 transition cursor-pointer flex items-center gap-1 text-amber-400 font-semibold">
-                  <HelpCircle className="w-3 h-3" /> Monetization Strategy
-                </button>
-              </li>
             </ul>
           </div>
         </div>

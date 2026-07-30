@@ -47,7 +47,7 @@ export default function App() {
     currencyCode: 'USD',
     electricityRate: 0.16,
     unitSystem: 'imperial',
-    showAdsensePreview: true,
+    showAdsensePreview: false,
   });
 
   const handleToggleAdsensePreview = () => {

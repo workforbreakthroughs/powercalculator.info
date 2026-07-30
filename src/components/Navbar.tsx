@@ -58,28 +58,6 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Settings className="w-3 h-3 text-stone-500" />
               <span>Rate: <strong className="text-stone-900">{userPrefs.currencySymbol}{userPrefs.electricityRate.toFixed(2)}/kWh</strong></span>
             </button>
-
-            {/* AdSense Preview Toggle */}
-            <button
-              onClick={onToggleAdsensePreview}
-              className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md transition text-xs font-medium cursor-pointer ${
-                userPrefs.showAdsensePreview
-                  ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
-                  : 'bg-white text-stone-500 border border-stone-200 hover:text-stone-800'
-              }`}
-              title="Toggle AdSense Preview mode to inspect ad slots"
-            >
-              <Eye className="w-3 h-3" />
-              <span>AdSense Slots {userPrefs.showAdsensePreview ? 'ON' : 'OFF'}</span>
-            </button>
-
-            {/* Consultant Insights Button */}
-            <button
-              onClick={onOpenAdsenseModal}
-              className="text-stone-700 hover:text-stone-900 underline font-medium flex items-center gap-1 text-xs cursor-pointer"
-            >
-              <span>Monetization Guide</span>
-            </button>
           </div>
         </div>
       </div>
