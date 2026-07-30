@@ -125,6 +125,10 @@ export default function App() {
         onOpenRateModal={() => setIsRateModalOpen(true)}
         onOpenAdsenseModal={() => setIsAdsenseModalOpen(true)}
         onToggleAdsensePreview={handleToggleAdsensePreview}
+        onSelectPowerPlanner={() => {
+          const planner = allCalculators.find((c) => c.id === 'power-planner') || allCalculators[0];
+          handleSelectCalculator(planner);
+        }}
       />
 
       {/* Header AdSense Leaderboard Banner */}
@@ -193,6 +197,32 @@ export default function App() {
                   <span>Custom Utility Rates ({userPrefs.currencySymbol}{userPrefs.electricityRate}/kWh)</span>
                 </div>
               </div>
+            </section>
+
+            {/* Featured Power Planner Banner */}
+            <section className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-amber-400/40">
+              <div className="space-y-2 max-w-2xl relative z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold tracking-wide uppercase backdrop-blur-md">
+                  <Zap className="w-3.5 h-3.5 fill-current" />
+                  <span>Flagship Interactive Tool</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  Whole-House Power Planner & Load Sizer
+                </h2>
+                <p className="text-amber-100 text-xs sm:text-sm leading-relaxed">
+                  Build your custom list of appliances (Air Conditioner, Refrigerator, TV, Rice Cooker, etc.) to automatically calculate daily kWh usage, monthly bill, required generator kVA, pure sine inverter, solar array, battery bank size, and solar payback period.
+                </p>
+              </div>
+              <button
+                onClick={() => {
+                  const planner = allCalculators.find((c) => c.id === 'power-planner') || allCalculators[0];
+                  handleSelectCalculator(planner);
+                }}
+                className="px-6 py-3.5 bg-slate-950 hover:bg-slate-900 text-amber-400 font-black rounded-2xl shadow-lg transition flex items-center gap-2 cursor-pointer border border-amber-400/30 text-sm shrink-0"
+              >
+                <span>Launch Power Planner</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </section>
 
             {/* Appliance Cost Shortcuts Bar */}

@@ -1,6 +1,70 @@
 import { Calculator } from '../types';
 
 export const calculatorsDatabase: Calculator[] = [
+  // Flagship: Whole-House Power Planner
+  {
+    id: 'power-planner',
+    slug: 'appliance-power-planner-calculator',
+    title: 'Whole-House Appliance Power Planner & System Sizer',
+    categoryId: 'electricity-cost',
+    shortDescription: 'Build a custom list of appliances (Air Conditioner, Fridge, TV, etc.) to automatically calculate daily kWh usage, monthly bill, generator size, solar array, battery bank, and payback period.',
+    detailedDescription: 'The Power Planner is an all-in-one load analysis tool. Instead of evaluating a single appliance in isolation, you can assemble your entire home or off-grid cabin inventory. The planner automatically calculates total continuous running wattage, motor starting surge, daily energy usage, monthly utility bill, required generator kVA rating, pure sine wave inverter wattage, solar array sizing, battery bank Ah/kWh capacity, and estimated solar ROI payback period.',
+    formula: 'Daily kWh = Σ(Qty × Watts × Hours) ÷ 1000\nMonthly Bill = Daily kWh × 30 × Electricity Rate\nSolar kW = (Daily kWh × 1000) ÷ (Peak Sun Hours × 0.8)\nBattery Ah = (Daily kWh × 1000 × Autonomy Days) ÷ (Voltage × Depth of Discharge)',
+    formulaTex: 'E_{\\text{daily}} = \\sum \\frac{N_i \\times P_i \\times t_i}{1000}, \\quad C_{\\text{month}} = E_{\\text{daily}} \\times 30 \\times \\text{Rate}',
+    variables: [
+      { name: 'Appliance Inventory', symbol: 'N × P', unit: 'Watts', description: 'Quantities and rated power draw for each appliance.' },
+      { name: 'Operating Hours', symbol: 't', unit: 'Hours / Day', description: 'Average active runtime per day for each device.' },
+      { name: 'Electricity Rate', symbol: 'R', unit: '$/kWh', description: 'Cost per kilowatt-hour charged by your utility.' },
+    ],
+    workedExamples: [
+      {
+        title: 'Sample Home Load Plan (AC, Fridge, 2x TV, Rice Cooker)',
+        scenario: 'A home running 2x 900W ACs for 8 hrs/day, 1x 150W Fridge 24 hrs/day, 2x 120W TVs for 5 hrs/day, and 1x 700W Rice Cooker for 1 hr/day.',
+        inputs: {},
+        stepByStep: [
+          'Step 1: Calculate daily energy usage for each appliance (AC: 14.4 kWh, Fridge: 3.6 kWh, TV: 1.2 kWh, Rice Cooker: 0.7 kWh).',
+          'Step 2: Sum total daily energy usage: 14.4 + 3.6 + 1.2 + 0.7 = 19.9 kWh / day.',
+          'Step 3: Compute monthly bill at $0.16/kWh: 19.9 × 30 × $0.16 = $95.52 / month.',
+          'Step 4: Determine peak continuous load: (2×900) + (1×150) + (2×120) + (1×700) = 2,890 Watts.',
+          'Step 5: Size solar array for 4.5 sun hours: (19.9 kWh × 1000) ÷ (4.5 × 0.8) = 5,527 Watts (5.5 kW).'
+        ],
+        finalResult: '19.9 kWh/day, $95.52/month, 5.5 kW Solar Array, 24.8 kWh Battery'
+      }
+    ],
+    faqs: [
+      {
+        question: 'Why does the generator recommendation exceed my continuous running watts?',
+        answer: 'Appliances with electric motors or compressors (like air conditioners, refrigerators, water pumps) draw 2 to 3.5 times their rated wattage when starting up. The generator size includes a surge buffer to prevent stalling.'
+      },
+      {
+        question: 'What is the difference between LiFePO4 and Lead-Acid battery sizing?',
+        answer: 'LiFePO4 (Lithium Iron Phosphate) batteries can safely be discharged down to 80% Depth of Discharge (DoD) without damaging life span. Lead-acid batteries should only be discharged to 50% DoD, requiring a 60% larger battery bank for the same usable backup.'
+      }
+    ],
+    commonMistakes: [
+      'Underestimating motor starting surge when sizing inverters and generators.',
+      'Assuming solar panels produce 100% rated output 12 hours a day (only 3.5 to 5.5 peak sun hours exist on average).',
+      'Forgetting vampire/standby loads for devices like Wi-Fi routers, TV boxes, and microwave clocks.'
+    ],
+    relatedCalculatorIds: ['appliance-electricity-cost', 'solar-panel-sizing', 'battery-capacity-runtime', 'inverter-size-calculator'],
+    popularityRank: 1,
+    targetAudience: ['Homeowner', 'DIY Enthusiast', 'Solar Installer', 'Electrician', 'Renter'],
+    searchKeywords: ['power planner calculator', 'whole house power calculator', 'appliance load list calculator', 'generator size for home', 'solar array and battery size calculator'],
+    tags: ['Flagship', 'Power Planner', 'Solar & Battery', 'Electricity Bill', 'Generator Sizing'],
+    inputs: [],
+    calculate: (inputs, userRate, currency) => {
+      return {
+        primaryValue: '$95.52',
+        primaryUnit: '/ month',
+        primaryLabel: 'Estimated Monthly Energy Cost',
+        secondaryMetrics: [
+          { label: 'Daily Usage', value: '19.90', unit: 'kWh/day' },
+          { label: 'Recommended Solar', value: '5.5', unit: 'kW' }
+        ]
+      };
+    }
+  },
+
   // 1. Electricity Cost & Bill Calculator
   {
     id: 'appliance-electricity-cost',

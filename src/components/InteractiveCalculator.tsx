@@ -5,6 +5,7 @@ import { categories } from '../data/categories';
 import { affiliateProducts } from '../data/affiliateData';
 import { InFeedAdSlot } from './InFeedAdSlot';
 import { PrintReportModal } from './PrintReportModal';
+import { PowerPlannerCalculator } from './PowerPlannerCalculator';
 import { generateCalculatorJsonLd } from '../data/seoStrategy';
 import {
   Zap,
@@ -159,7 +160,10 @@ export const InteractiveCalculator: React.FC<InteractiveCalculatorProps> = ({
       )}
 
       {/* Main Interactive Calculator Form & Live Result Display Grid */}
-      <div className="grid lg:grid-cols-12 gap-6 items-start">
+      {calculator.id === 'power-planner' ? (
+        <PowerPlannerCalculator userPrefs={userPrefs} />
+      ) : (
+        <div className="grid lg:grid-cols-12 gap-6 items-start">
         {/* Left Column: Form Controls (7 cols) */}
         <div className="lg:col-span-7 bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-5">
           <div className="flex items-center justify-between border-b border-stone-100 pb-3">
@@ -298,6 +302,7 @@ export const InteractiveCalculator: React.FC<InteractiveCalculatorProps> = ({
           <InFeedAdSlot showAdsensePreview={userPrefs.showAdsensePreview} label="Result Zone Ad" />
         </div>
       </div>
+      )}
 
       {/* Step by Step Mathematical Derivation */}
       {result.breakdownSteps && result.breakdownSteps.length > 0 && (

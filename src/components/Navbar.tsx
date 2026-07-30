@@ -13,6 +13,7 @@ interface NavbarProps {
   onOpenRateModal: () => void;
   onOpenAdsenseModal: () => void;
   onToggleAdsensePreview: () => void;
+  onSelectPowerPlanner?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -25,6 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenRateModal,
   onOpenAdsenseModal,
   onToggleAdsensePreview,
+  onSelectPowerPlanner,
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -107,13 +109,24 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
           <button
+            onClick={() => {
+              if (onSelectPowerPlanner) onSelectPowerPlanner();
+              else setCurrentView('calculator');
+            }}
+            className="px-3 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold shadow-sm"
+          >
+            <Zap className="w-4 h-4 fill-current text-slate-950" />
+            <span>Power Planner</span>
+          </button>
+
+          <button
             onClick={() => { setCurrentView('directory'); setSelectedCategory(null); }}
-            className={`px-3.5 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
+            className={`px-3 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
               currentView === 'directory' ? 'bg-stone-800 text-white font-semibold' : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
             }`}
           >
             <LayoutGrid className="w-4 h-4" />
-            <span>Calculators (100+)</span>
+            <span>Calculators</span>
           </button>
 
           <button
@@ -176,6 +189,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           </form>
 
           <div className="grid grid-cols-2 gap-2 text-sm pt-2">
+            <button
+              onClick={() => {
+                if (onSelectPowerPlanner) onSelectPowerPlanner();
+                setIsMobileMenuOpen(false);
+              }}
+              className="p-2.5 rounded-lg bg-amber-500 text-slate-950 font-bold text-left flex items-center gap-2 col-span-2"
+            >
+              <Zap className="w-4 h-4 fill-current text-slate-950" />
+              <span>Launch Power Planner Tool</span>
+            </button>
+
             <button
               onClick={() => { setCurrentView('directory'); setIsMobileMenuOpen(false); }}
               className="p-2.5 rounded-lg bg-white border border-stone-200 text-stone-800 text-left font-medium flex items-center gap-2"
