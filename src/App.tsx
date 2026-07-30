@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { UserPreferences, Calculator, TargetAudience } from './types';
 import { allCalculators, getCalculatorsByCategory } from './data/calculatorsDatabase';
 import { categories } from './data/categories';
@@ -31,6 +31,11 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activeCalculator, setActiveCalculator] = useState<Calculator | null>(null);
   const [selectedArticleSlug, setSelectedArticleSlug] = useState<string | null>(null);
+
+  // Auto scroll to top when changing views
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [currentView]);
 
   // Search & Filters State
   const [searchQuery, setSearchQuery] = useState<string>('');

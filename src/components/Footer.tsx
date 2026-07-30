@@ -13,8 +13,19 @@ export const Footer: React.FC<FooterProps> = ({
   setSelectedCategory,
   onOpenAdsenseModal,
 }) => {
+  const handleNavigate = (view: string) => {
+    setCurrentView(view);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const handleCategoryClick = (catId: string) => {
+    setSelectedCategory(catId);
+    setCurrentView('directory');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
-    <footer className="bg-stone-900 text-stone-400 border-t border-stone-800 pt-12 pb-8 px-4 mt-16 no-print text-xs">
+    <footer className="bg-stone-900 text-stone-400 border-t border-stone-800 pt-12 pb-12 px-4 mt-16 no-print text-xs">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Top 4 Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -42,15 +53,12 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Calculator Categories Col */}
           <div>
             <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-3">Popular Categories</h4>
-            <ul className="space-y-2 text-stone-400">
+            <ul className="space-y-1 text-stone-400">
               {categories.slice(0, 6).map((cat) => (
                 <li key={cat.id}>
                   <button
-                    onClick={() => {
-                      setSelectedCategory(cat.id);
-                      setCurrentView('directory');
-                    }}
-                    className="hover:text-amber-400 transition text-left cursor-pointer"
+                    onClick={() => handleCategoryClick(cat.id)}
+                    className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
                   >
                     {cat.name}
                   </button>
@@ -62,57 +70,84 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Tools & Resources Col */}
           <div>
             <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-3">Resources & Gear</h4>
-            <ul className="space-y-2 text-stone-400">
+            <ul className="space-y-1 text-stone-400">
               <li>
-                <button onClick={() => setCurrentView('directory')} className="hover:text-amber-400 transition cursor-pointer">
+                <button
+                  onClick={() => handleNavigate('directory')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
+                >
                   All 100+ Calculators
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('articles')} className="hover:text-amber-400 transition cursor-pointer">
+                <button
+                  onClick={() => handleNavigate('articles')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
+                >
                   Electrical Guides & Articles
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('affiliates')} className="hover:text-amber-400 transition cursor-pointer">
+                <button
+                  onClick={() => handleNavigate('affiliates')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
+                >
                   Recommended Solar & Power Gear
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('sitemap')} className="hover:text-amber-400 transition cursor-pointer">
+                <button
+                  onClick={() => handleNavigate('sitemap')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
+                >
                   Interactive Sitemap Index
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('seo-audit')} className="hover:text-amber-400 transition cursor-pointer">
+                <button
+                  onClick={() => handleNavigate('seo-audit')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
+                >
                   SEO & Schema Markup Tool
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Legal & AdSense Col */}
+          {/* Legal & Company Col */}
           <div>
             <h4 className="font-bold text-white uppercase tracking-wider text-xs mb-3">Legal & Company</h4>
-            <ul className="space-y-2 text-stone-400">
+            <ul className="space-y-1 text-stone-400">
               <li>
-                <button onClick={() => setCurrentView('about')} className="hover:text-amber-400 transition cursor-pointer flex items-center gap-1">
-                  <FileText className="w-3 h-3 text-stone-500" /> About Us
+                <button
+                  onClick={() => handleNavigate('about')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center gap-1.5"
+                >
+                  <FileText className="w-3.5 h-3.5 text-stone-400 shrink-0" /> About Us
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('privacy')} className="hover:text-amber-400 transition cursor-pointer flex items-center gap-1">
-                  <Lock className="w-3 h-3 text-stone-500" /> Privacy Policy
+                <button
+                  onClick={() => handleNavigate('privacy')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center gap-1.5"
+                >
+                  <Lock className="w-3.5 h-3.5 text-stone-400 shrink-0" /> Privacy Policy
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('terms')} className="hover:text-amber-400 transition cursor-pointer flex items-center gap-1">
-                  <FileText className="w-3 h-3 text-stone-500" /> Terms of Service
+                <button
+                  onClick={() => handleNavigate('terms')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center gap-1.5"
+                >
+                  <FileText className="w-3.5 h-3.5 text-stone-400 shrink-0" /> Terms of Service
                 </button>
               </li>
               <li>
-                <button onClick={() => setCurrentView('contact')} className="hover:text-amber-400 transition cursor-pointer flex items-center gap-1">
-                  <Mail className="w-3 h-3 text-stone-500" /> Contact & Support
+                <button
+                  onClick={() => handleNavigate('contact')}
+                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center gap-1.5"
+                >
+                  <Mail className="w-3.5 h-3.5 text-stone-400 shrink-0" /> Contact & Support
                 </button>
               </li>
             </ul>
