@@ -137,13 +137,13 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
-            onClick={() => setCurrentView('seo-audit')}
+            onClick={() => setCurrentView('affiliates')}
             className={`px-3.5 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
-              currentView === 'seo-audit' ? 'bg-stone-800 text-white font-semibold' : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
+              currentView === 'affiliates' ? 'bg-stone-800 text-white font-semibold' : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
             }`}
           >
-            <Info className="w-4 h-4" />
-            <span>SEO & Schema</span>
+            <Sparkles className="w-4 h-4" />
+            <span>Gear Picks</span>
           </button>
         </nav>
 

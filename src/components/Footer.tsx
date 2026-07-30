@@ -103,14 +103,6 @@ export const Footer: React.FC<FooterProps> = ({
                   Interactive Sitemap Index
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => handleNavigate('seo-audit')}
-                  className="w-full text-left py-1.5 px-1 hover:text-amber-400 active:text-amber-300 transition cursor-pointer touch-manipulation text-stone-300 flex items-center"
-                >
-                  SEO & Schema Markup Tool
-                </button>
-              </li>
             </ul>
           </div>
 
