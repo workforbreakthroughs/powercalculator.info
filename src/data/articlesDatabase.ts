@@ -148,5 +148,188 @@ export const articlesDatabase: Article[] = [
         text: 'The National Electrical Code (NEC) recommends keeping voltage drop under 3% for branch circuits to ensure maximum electrical efficiency and appliance longevity.'
       }
     ]
+  },
+
+  {
+    id: 'myths-power-battery-solar',
+    slug: '10-common-myths-about-power-battery-solar-energy',
+    title: '10 Common Myths About Power, Batteries & Solar Energy Debunked',
+    summary: 'Uncover the truth behind viral electricity misconceptions, solar panel winter performance, battery lifetime hacks, phantom loads, and off-grid power realities.',
+    category: 'Energy Myths & Facts',
+    readTimeMinutes: 7,
+    publishDate: '2026-08-04',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['battery-capacity-runtime', 'solar-panel-sizing', 'standby-power-cost', 'appliance-electricity-cost'],
+    tags: ['Power Myths', 'Battery Care', 'Solar Misconceptions', 'Energy Efficiency', 'Phantom Load'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Electrical engineering and clean energy technology are surrounded by urban legends, outdated rules of thumb, and viral Internet myths. Believing these misconceptions can lead to wasted money, damaged equipment, or undersized solar and battery systems. Here are 10 of the most common power, battery, and solar myths thoroughly debunked with real physics.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 1: Leaving Devices Plugged In at 100% Will Overcharge Modern Batteries'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Modern smartphones, laptops, and battery power stations use intelligent Battery Management Systems (BMS). When a Lithium-ion or LiFePO4 battery reaches 100%, the internal charging circuit automatically halts incoming current and operates off wall power directly.'
+      },
+      {
+        type: 'callout',
+        calloutType: 'info',
+        text: 'Note: While batteries will not overcharge or explode, keeping Lithium-ion batteries at 100% continuous state-of-charge under high ambient temperatures can accelerate chemical degradation over years.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 2: Solar Panels Do Not Produce Electricity in Cold Winter Weather'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Solar photovoltaic (PV) panels actually operate MORE efficiently in cold temperatures than in scorching summer heat! Photovoltaic cells convert light (photons), not heat, into electricity. Cold ambient temperatures lower silicon semiconductor resistance, resulting in higher voltage output.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 3: Leaving Ceiling Fans Turned On Cools Down Empty Rooms'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Ceiling fans cool people by creating a wind-chill effect that speeds up moisture evaporation on human skin. They do not lower the actual ambient temperature of the room. Running a fan in an empty room wastes electricity and adds a small amount of heat from the electric motor.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 4: Solar Panels Store Energy Directly Inside the Glass PV Modules'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Solar panels are real-time electricity generators with no internal storage capacity. When photons strike the PV cells, electrons flow immediately. To store this energy for nighttime use, power must be routed to external battery banks (such as LiFePO4 or Lead-Acid batteries).'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 5: Turning Off Appliances Eliminates 100% of Their Electricity Usage'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Many household electronics enter "standby mode" rather than turning completely off. Known as phantom load or vampire power, standby power drawn by smart TVs, microwave clocks, cable boxes, and charger bricks accounts for 5% to 10% of total residential power bills.'
+      },
+      {
+        type: 'formula',
+        text: 'Standby Cost ($/Year) = Standby Watts × 8,760 Hours ÷ 1,000 × Electricity Rate ($/kWh)'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 6: A 100-Watt Solar Panel Always Delivers 100 Watts of Real Power'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Solar panel ratings are measured under Standard Test Conditions (STC) in lab settings (1,000 W/m² irradiance, 25°C cell temperature). Real-world factors such as sun angle, dust, atmospheric haze, and inverter conversion losses usually yield 75% to 85% of rated wattage.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 7: High-Speed Supercharging Damages Batteries Instantly'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Ultra-fast charging algorithms dynamically throttle power based on internal cell temperature and state of charge (SOC). Fast charging increases thermal stress slightly, but modern thermal management liquid cooling prevents instant damage.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 8: Portable Generators Only Burn Fuel When Appliances Are Connected'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Internal combustion gasoline and diesel generators must maintain a constant engine speed (typically 3,600 RPM for 60Hz AC) regardless of load. An idling generator still consumes roughly 40% to 50% of its full-load fuel baseline.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 9: Thicker Wire Gauges Waste Electrical Power'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. In American Wire Gauge (AWG), smaller numbers represent THICKER copper conductors. Thicker wires have lower electrical resistance, which minimizes voltage drop and reduces power wasted as heat loss.'
+      },
+      {
+        type: 'heading2',
+        text: 'Myth 10: Grid-Tied Solar Automatically Runs During Power Blackouts'
+      },
+      {
+        type: 'paragraph',
+        text: 'False. Standard grid-tied solar inverters feature anti-islanding protection that shuts down the solar array immediately when utility power drops. This prevents feeding high voltage back into power lines, protecting utility repair workers. Off-grid backup during blackouts requires a hybrid inverter with battery storage or a manual transfer switch.'
+      }
+    ]
+  },
+
+  {
+    id: 'amazing-facts-electricity-solar-battery',
+    slug: '20-amazing-facts-about-electricity-solar-battery-science',
+    title: '20 Amazing Facts About Electricity, Solar Energy & Battery Science',
+    summary: 'Mind-blowing facts about lightning voltage, how solar photons travel from the core of the Sun, the world’s largest grid battery, and electric eel bio-voltage.',
+    category: 'Energy Myths & Facts',
+    readTimeMinutes: 8,
+    publishDate: '2026-08-04',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['solar-panel-sizing', 'battery-capacity-runtime', 'unit-converter-power-energy', 'generator-fuel-runtime'],
+    tags: ['Energy Facts', 'Physics Trivia', 'Solar Science', 'Battery Tech', 'Electrical History'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Electricity and energy storage are the invisible forces powering modern human civilization. From subatomic quantum mechanics to planetary-scale power grids, here are 20 astonishing scientific facts about electricity, solar radiation, and battery technology.'
+      },
+      {
+        type: 'heading2',
+        text: 'Solar & Cosmic Energy Wonders'
+      },
+      {
+        type: 'list',
+        items: [
+          'Photons Take 100,000 Years to Escape the Sun\'s Core: Created by nuclear fusion deep in the solar core, light particles bounce randomly for tens of thousands of years before reaching the surface. Once free, they sprint to Earth in just 8 minutes and 20 seconds!',
+          'Earth Receives 173,000 Terawatts of Solar Power Continuously: More solar energy strikes the Earth in a single hour than the entire human population consumes in a full year.',
+          'The Sahara Solar Paradox: Covering less than 1.2% of the Sahara Desert with photovoltaic panels would generate enough electricity to power the entire globe.',
+          'Space-Based Solar Satellites Orbit 24/7: Satellites in geostationary orbit receive up to 8 times more continuous solar irradiance than ground-based panels because there is no atmosphere, weather, or night.',
+          'Solar Cell Efficiency Jumped from 6% to 33%+: Early silicon cells used on the Vanguard 1 satellite in 1958 converted under 6% of light. Modern multi-junction perovskite laboratory cells exceed 33% efficiency.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: 'Mind-Blowing Electrical Physics'
+      },
+      {
+        type: 'list',
+        items: [
+          'A Single Lightning Bolt Reaches 300 Million Volts: A typical flash carries 30,000 Amps of current and reaches temperatures of 50,000°F (30,000°K)—five times hotter than the surface of the sun.',
+          'Electrons Move Slower Than a Snail Inside Wires: While electrical electromagnetic waves travel near the speed of light (~90% c), individual electron drift velocity inside copper wire is under 1 millimeter per second!',
+          'Electric Eels Produce Up to 860 Volts: Specialized biological electrocyte cells act like thousands of series-connected battery cells, discharging lethal voltage pulses to hunt prey.',
+          'The Power Grid Operates with ZERO Storage: In traditional electrical grids, electricity must be produced at the exact millisecond it is consumed by household light switches or factory motors.',
+          'Birds Don\'t Get Shocked on Power Lines: Because both feet of a bird rest on a single wire at identical electrical potential, there is no voltage difference across their body, so no current flows.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: 'Battery & Storage Marvels'
+      },
+      {
+        type: 'list',
+        items: [
+          'The Baghdad Battery Is 2,000 Years Old: Terracotta clay jars containing copper cylinders and iron rods discovered in Iraq date back to 250 BC, likely used for ancient electroplating.',
+          'Pumped Hydro Stores 90% of Global Grid Energy: Water is pumped uphill to reservoirs when grid power is cheap and released downhill through hydro turbines during peak demand hours.',
+          'Solid-State Batteries Eliminate Liquid Fire Risks: Replacing flammable liquid electrolytes with solid ceramic or polymer layers allows double the energy density (Wh/kg) and near-instant charging.',
+          'Tesla Megapacks Can Power Entire Cities: Grid-scale utility batteries respond to power grid dropouts in under 100 milliseconds, preventing blackouts across regional grids.',
+          'Gravity Batteries Store Energy with Concrete Weights: Mechanical energy storage systems drop multi-ton concrete blocks down abandoned mine shafts to drive power generators cleanly.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: 'Everyday Technology & Efficiency Facts'
+      },
+      {
+        type: 'list',
+        items: [
+          'A Single Google Search Consumes ~0.3 Watt-Hours: Processing your query across data centers consumes enough energy to illuminate a 60W LED bulb for 17 seconds.',
+          'Microwaves Cook Food via 2.45 GHz Radio Frequency Standing Waves: Microwave ovens excite water molecules in food, generating heat through molecular friction.',
+          'Offshore Wind Turbine Blades Can Exceed 350 Feet: A single sweep of a 15-Megawatt offshore turbine blade covers an area equivalent to 7 football fields.',
+          'LED Bulbs Save 85% More Energy Than Incandescent Filaments: Traditional Edison bulbs converted 90% of electrical energy into wasted heat and only 10% into light.',
+          'Recycling Aluminum Saves 95% of Production Energy: Refining raw bauxite ore into aluminum requires immense electrolysis power, whereas melting recycled cans takes a fraction of the energy.'
+        ]
+      }
+    ]
   }
 ];

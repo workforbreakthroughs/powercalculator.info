@@ -26,8 +26,20 @@
   </url>
   <url>
     <loc>https://powercalculator.info/?view=articles</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://powercalculator.info/?article=10-common-myths-about-power-battery-solar-energy</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://powercalculator.info/?article=20-amazing-facts-about-electricity-solar-battery-science</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
