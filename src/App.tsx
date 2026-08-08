@@ -32,10 +32,10 @@ export default function App() {
   const [activeCalculator, setActiveCalculator] = useState<Calculator | null>(null);
   const [selectedArticleSlug, setSelectedArticleSlug] = useState<string | null>(null);
 
-  // Auto scroll to top when changing views
+  // Auto scroll to top when changing views or items
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [currentView, activeCalculator]);
+  }, [currentView, activeCalculator, selectedArticleSlug, selectedCategory]);
 
   // --- URL Routing, Deep Linking & SPA AdSense Pageview Tracker ---
   // Read initial route from URL search params on mount

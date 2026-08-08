@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { articlesDatabase } from '../data/articlesDatabase';
 import { getCalculatorById } from '../data/calculatorsDatabase';
 import { Calculator } from '../types';
@@ -15,6 +15,11 @@ export const ArticlesView: React.FC<ArticlesViewProps> = ({
   setSelectedArticleSlug,
   onSelectCalculator,
 }) => {
+  // Always scroll to top when opening an article or returning to article list
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [selectedArticleSlug]);
+
   const currentArticle = articlesDatabase.find((a) => a.slug === selectedArticleSlug);
 
   if (currentArticle) {

@@ -331,5 +331,342 @@ export const articlesDatabase: Article[] = [
         ]
       }
     ]
+  },
+
+  {
+    id: 'amazing-history-of-electricity',
+    slug: 'amazing-history-of-electricity-from-amber-to-quantum-grids',
+    title: 'The Amazing History of Electricity: From Static Amber to Modern AC/DC Grids',
+    summary: 'Travel through time from Thales of Miletus rubbing amber in 600 BC to Benjamin Franklin’s kite, Volta’s pile, Faraday’s dynamo, and the famous War of the Currents between Edison and Tesla.',
+    category: 'Electrical History & Tech',
+    readTimeMinutes: 8,
+    publishDate: '2026-08-08',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['ohms-law', 'appliance-electricity-cost', 'unit-converter-power-energy'],
+    tags: ['Electricity History', 'Tesla vs Edison', 'Physics History', 'AC DC Current', 'Electrical Engineering'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Today we flip a light switch or plug in our smartphones without a second thought, but electricity was once viewed as mysterious magic, a divine spectacle of nature, or an unpredictable hazard. The story of how humanity tamed electrons spans over two millennia of brilliant scientific discoveries, fierce rivalry, and visionary engineering.'
+      },
+      {
+        type: 'heading2',
+        text: '600 BC: The Amber Effect (Electron Origins)'
+      },
+      {
+        type: 'paragraph',
+        text: 'The journey began in ancient Greece around 600 BC. Philosopher Thales of Miletus noticed that when he rubbed fossilized tree resin (amber) with cat fur, it attracted lightweight objects like feathers and dried straw. Unbeknownst to him, he had created static electricity. In fact, our modern word "electricity" comes directly from the ancient Greek word for amber: "elektron"!'
+      },
+      {
+        type: 'heading2',
+        text: '1752: Benjamin Franklin & The Key in a Thunderstorm'
+      },
+      {
+        type: 'paragraph',
+        text: 'For centuries, static electricity remained a party trick. That changed in June 1752 when Benjamin Franklin flew a silk kite with a metal key attached into a thunderstorm in Philadelphia. As lightning flashed, the key collected electrical charge from the storm clouds, proving that lightning was a massive natural electrical discharge. Franklin went on to invent the lightning rod and coined terms we still use daily: charge, conductor, positive, negative, and battery.'
+      },
+      {
+        type: 'heading2',
+        text: '1800-1831: Continuous Current & Electromagnetic Induction'
+      },
+      {
+        type: 'paragraph',
+        text: 'Until 1800, electricity could only be stored as brief static bursts. Italian scientist Alessandro Volta revolutionized physics by inventing the "Voltaic Pile"—the world’s first chemical battery that produced a continuous flow of direct current (DC). In 1831, Michael Faraday discovered that moving a magnet through a coil of copper wire induced an electric current. This breakthrough created the world’s first electric dynamo, proving mechanical motion could be converted into electrical power!'
+      },
+      {
+        type: 'heading2',
+        text: '1880s: The War of the Currents: Thomas Edison vs. Nikola Tesla'
+      },
+      {
+        type: 'paragraph',
+        text: 'The late 19th century witnessed one of history’s greatest technological showdowns. Thomas Edison championed Direct Current (DC), opening America’s first commercial power station on Pearl Street, NYC in 1882. However, DC electricity suffered from severe voltage drop over distance, requiring power plants every single mile.'
+      },
+      {
+        type: 'paragraph',
+        text: 'Serbian genius Nikola Tesla, partnering with entrepreneur George Westinghouse, proposed Alternating Current (AC). AC electricity could be stepped up to tens of thousands of volts using transformers for efficient long-distance transmission across hundreds of miles, then stepped down safely before entering homes. AC won the War of the Currents and became the universal foundation of modern power grids world-wide.'
+      },
+      {
+        type: 'callout',
+        calloutType: 'info',
+        text: 'Did You Know? Modern high-voltage DC (HVDC) lines have made a dramatic comeback! HVDC is now used to transmit massive offshore wind power across hundreds of miles of ocean back to land with minimal heat loss.'
+      }
+    ]
+  },
+
+  {
+    id: 'amazing-history-of-battery',
+    slug: 'amazing-history-of-the-battery-from-baghdad-jar-to-lifepo4',
+    title: 'The Amazing History of the Battery: From the Baghdad Jar to Lithium LiFePO4',
+    summary: 'Discover the fascinating evolution of energy storage: from 2,000-year-old terracotta jars in ancient Iraq to Gaston Planté’s lead-acid cell, John Goodenough’s Nobel-winning Lithium-ion, and solid-state batteries.',
+    category: 'Energy Myths & Facts',
+    readTimeMinutes: 7,
+    publishDate: '2026-08-08',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['battery-capacity-runtime', 'inverter-size-calculator', 'power-planner'],
+    tags: ['Battery History', 'LiFePO4', 'Lithium Ion', 'Baghdad Battery', 'Lead Acid'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Without batteries, portable electronics, electric vehicles, cardiac pacemakers, and off-grid solar energy systems could not exist. The quest to compact chemical energy into a lightweight, rechargeable package has taken over two thousand years of human ingenuity.'
+      },
+      {
+        type: 'heading2',
+        text: '250 BC: The Mysterious Baghdad Battery'
+      },
+      {
+        type: 'paragraph',
+        text: 'In 1936, archaeologists near Baghdad, Iraq unearthed a 5-inch terracotta clay jar containing a copper cylinder surrounding an iron rod. When filled with an acidic liquid like lemon juice or wine vinegar, modern replicas produce 1.1 to 2.0 volts of electricity! Historians believe ancient Mesopotamians used these primitive electrochemical cells for gilding jewelry or electroplating gold onto silver statues.'
+      },
+      {
+        type: 'heading2',
+        text: '1800: Volta’s Pile Sparks a New Era'
+      },
+      {
+        type: 'paragraph',
+        text: 'In 1800, Alessandro Volta stacked alternating discs of zinc and copper separated by cardboard soaked in saltwater brine. This "Voltaic Pile" was the first reliable source of continuous electric current, leading to the unit of potential difference named in his honor: the Volt.'
+      },
+      {
+        type: 'heading2',
+        text: '1859: Gaston Planté Invents the Rechargeable Lead-Acid Battery'
+      },
+      {
+        type: 'paragraph',
+        text: 'French physicist Gaston Planté made a monumental breakthrough in 1859 by submerging lead plates in sulfuric acid. This was the world’s very first rechargeable battery. Lead-acid batteries made automotive starter engines, submarine power, and off-grid solar storage possible—and remarkably, lead-acid technology remains widely used over 165 years later!'
+      },
+      {
+        type: 'heading2',
+        text: '1970s-1990s: The Lithium-Ion Revolution'
+      },
+      {
+        type: 'paragraph',
+        text: 'As consumer electronics shrank, lead-acid was too heavy and bulky. Researchers Stanley Whittingham, John Goodenough, and Akira Yoshino developed the Lithium-ion battery. Because lithium is the lightest metal on the periodic table and possesses the highest electrochemical potential, Li-ion batteries delivered 4x the energy density of lead-acid. Their invention earned them the 2019 Nobel Prize in Chemistry.'
+      },
+      {
+        type: 'heading2',
+        text: 'Today: Lithium Iron Phosphate (LiFePO4) & Solid-State Energy'
+      },
+      {
+        type: 'paragraph',
+        text: 'Modern renewable energy storage relies on Lithium Iron Phosphate (LiFePO4). Unlike older cobalt chemistries, LiFePO4 features a ultra-stable olivine crystal lattice that eliminates thermal runaway fire risks, lasts 3,500 to 6,000+ deep cycles, and uses non-toxic, abundant materials. Up next: solid-state ceramic batteries promising double the energy density with near-instant charging times!'
+      }
+    ]
+  },
+
+  {
+    id: 'different-types-of-plugs-around-the-world',
+    slug: 'guide-to-international-plug-types-voltages-and-frequencies',
+    title: 'Guide to International Plug Types, Voltages & Frequencies (Type A to N)',
+    summary: 'Why does the world use 15 different outlet plugs? Learn the engineering differences between 110V-120V vs 220V-240V, 50Hz vs 60Hz, grounding safety, and dual-voltage travel adapters.',
+    category: 'Electrical Standards',
+    readTimeMinutes: 8,
+    publishDate: '2026-08-08',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['appliance-electricity-cost', 'unit-converter-power-energy', 'wire-gauge-calculator'],
+    tags: ['Plug Types', 'International Outlets', '110V vs 220V', 'Travel Adapter', '50Hz vs 60Hz'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'If you have ever packed a bag for international travel, you have likely encountered the frustrating maze of wall outlets, travel adapters, and voltage converters. Across the globe, 15 distinct outlet plug configurations (labeled Type A through N by the US International Trade Administration) are currently in active use.'
+      },
+      {
+        type: 'heading2',
+        text: 'The Great Voltage Divide: 110V-120V vs. 220V-240V'
+      },
+      {
+        type: 'paragraph',
+        text: 'Why isn\'t wall power standard everywhere? Early North American grids adopted Thomas Edison’s 110V standard for safety. Europe initially adopted 110V as well, but in the 1950s switched to 220V-240V to double electrical power delivery without doubling wire thickness. According to Ohm’s Law and Joule Heating (P = I²R), delivering 1,200 Watts at 240 Volts requires only 5 Amps of current, whereas at 120 Volts it requires 10 Amps! Higher voltage allows thinner copper wires inside walls with significantly lower heat loss.'
+      },
+      {
+        type: 'heading2',
+        text: '50Hz vs. 60Hz Electrical Frequencies'
+      },
+      {
+        type: 'paragraph',
+        text: 'Electrical grids oscillate alternating current direction 50 or 60 times per second. North America, Taiwan, and parts of Japan operate on 60Hz, while Europe, Asia, Australia, and Africa operate on 50Hz. Electric motors and clocks tuned for 60Hz will run 20% slower when plugged into 50Hz outlets!'
+      },
+      {
+        type: 'heading2',
+        text: 'Breakdown of Major International Plug Types'
+      },
+      {
+        type: 'list',
+        items: [
+          'Type A & B (North & Central America, Japan): Type A features two parallel flat prongs (100V-120V). Type B adds a round grounding pin for appliance surge safety.',
+          'Type C (The Europlug): Ungrounded two-round-pin plug widely used across continental Europe, South America, and parts of Asia.',
+          'Type D & M (India, South Africa): Features three large round pins arranged in a triangle for heavy industrial and domestic appliances.',
+          'Type E & F (Schuko / Germany, France, Russia): Heavy-duty round pin plugs featuring side grounding spring clips or a top grounding pin slot.',
+          'Type G (United Kingdom, Ireland, Singapore, Malaysia): Widely regarded as the world\'s safest plug design! Features three rectangular blades, internal safety fuses in every plug, insulated prong bases, and spring-loaded internal outlet shutters.',
+          'Type H & I (Israel, Australia, New Zealand, China, Argentina): Type I features two angled V-shaped flat prongs with a vertical grounding pin.',
+          'Type J, K, L, N (Switzerland, Denmark, Italy, Brazil): Compact grounded plugs with unique prong spacing and safety recesses.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: 'Dual-Voltage Gear vs. Single-Voltage Traps'
+      },
+      {
+        type: 'paragraph',
+        text: 'Before traveling, inspect the tiny power label on your device charger. If it reads "INPUT: 100-240V ~ 50/60Hz", your device is dual-voltage and only requires a cheap plastic plug adapter! However, if it reads "INPUT: 120V 60Hz" (common for high-wattage hairdryers, curling irons, and blenders), plugging it into a 230V European wall socket will destroy the device and blow local fuses.'
+      }
+    ]
+  },
+
+  {
+    id: 'different-types-of-solar-panels',
+    slug: 'types-of-solar-panels-monocrystalline-polycrystalline-thin-film-perovskite',
+    title: 'Different Types of Solar Panels: Monocrystalline, Polycrystalline, Thin-Film & Perovskite',
+    summary: 'Compare efficiency, cost, lifespan, and temperature coefficients across Monocrystalline (PERC & TOPCon), Polycrystalline, Flexible Thin-Film, Bifacial, and next-gen Perovskite tandem cells.',
+    category: 'Solar Technology',
+    readTimeMinutes: 7,
+    publishDate: '2026-08-08',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['solar-panel-sizing', 'solar-payback-roi', 'power-planner'],
+    tags: ['Solar Panel Types', 'Monocrystalline', 'Polycrystalline', 'TOPCon', 'Bifacial Solar', 'Perovskite'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Investing in solar energy requires choosing the right photovoltaic (PV) panel chemistry for your roof, RV, or off-grid homestead. Not all solar panels are created equal—panel efficiency, temperature coefficients, degradation rates, and physical flexibility vary drastically between technologies.'
+      },
+      {
+        type: 'heading2',
+        text: '1. Monocrystalline Silicon Panels (PERC & TOPCon)'
+      },
+      {
+        type: 'paragraph',
+        text: 'Monocrystalline solar panels represent the gold standard in residential solar installations. Manufactured from single, continuous ultra-pure silicon crystal ingots, they are easily recognized by their sleek dark black appearance and octagonal cell shape.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Efficiency: 20% to 24%+ (Highest power output per square foot)',
+          'Lifespan: 25 to 30+ year linear performance warranties',
+          'Modern Variants: TOPCon (Tunnel Oxide Passivated Contact) and HJT (Heterojunction) panels boost light conversion efficiency and lower heat degradation in hot summer climates.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: '2. Polycrystalline Silicon Panels'
+      },
+      {
+        type: 'paragraph',
+        text: 'Polycrystalline panels are manufactured by melting multiple raw silicon fragments together into rectangular molds. They are distinguished by their marbled bright blue metallic hue and square cell boundaries.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Efficiency: 15% to 17% (Lower efficiency requires ~25% more roof area)',
+          'Cost: Historically cheaper to produce, but monocrystalline manufacturing cost reductions have made polycrystalline mostly obsolete for new home roof arrays.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: '3. Bifacial Solar Panels'
+      },
+      {
+        type: 'paragraph',
+        text: 'Bifacial panels feature glass on BOTH front and rear surfaces. While the top side absorbs direct sunlight, the transparent rear side absorbs reflected sunlight bouncing off light metal roofs, concrete patios, gravel, or snow (known as the albedo effect). Bifacial arrays routinely yield 10% to 30% additional free kilowatt-hours!'
+      },
+      {
+        type: 'heading2',
+        text: '4. Flexible & Portable Thin-Film Panels (CIGS & Amorphous)'
+      },
+      {
+        type: 'paragraph',
+        text: 'Thin-film panels deposit photovoltaic materials (Copper Indium Gallium Selenide or Amorphous Silicon) onto flexible plastic or stainless steel backings. Weighing 70% less than glass panels and capable of bending up to 30 degrees, flexible thin-film panels are ideal for curved RV roofs, marine biminis, and backpackers.'
+      },
+      {
+        type: 'heading2',
+        text: '5. Next-Gen Perovskite Tandem Solar Cells'
+      },
+      {
+        type: 'paragraph',
+        text: 'The future of solar energy lies in Perovskite tandem cells. By layering a perovskite mineral coating on top of a conventional silicon cell, the top layer absorbs high-energy blue/green sunlight while the bottom layer absorbs infrared wavelengths. Laboratory efficiencies have surpassed 33.9%, promising lower cost solar electricity worldwide!'
+      }
+    ]
+  },
+
+  {
+    id: 'different-types-of-batteries',
+    slug: 'types-of-batteries-lead-acid-agm-gel-lithium-lifepo4-solid-state',
+    title: 'Different Types of Rechargeable Batteries: Lead-Acid, AGM, Gel, Lithium LiFePO4 & Solid-State',
+    summary: 'Which battery chemistry fits your solar system, RV, or backup generator? In-depth comparison of flooded lead-acid, AGM, Gel, NMC Lithium-ion, LiFePO4, and future Solid-State tech.',
+    category: 'Battery Technology',
+    readTimeMinutes: 8,
+    publishDate: '2026-08-08',
+    author: 'PowerCalculator Science & Engineering Team',
+    linkedCalculatorIds: ['battery-capacity-runtime', 'inverter-size-calculator', 'power-planner'],
+    tags: ['Battery Chemistries', 'LiFePO4 vs Lead Acid', 'AGM Battery', 'Gel Battery', 'Lithium Ion', 'Energy Storage'],
+    content: [
+      {
+        type: 'paragraph',
+        text: 'Selecting the right rechargeable battery chemistry is critical when designing off-grid solar storage, marine electrical systems, camper van power banks, or emergency backup generators. Each battery chemistry features unique weight-to-power ratios, depth of discharge (DoD) limits, maintenance demands, and long-term cycle economics.'
+      },
+      {
+        type: 'heading2',
+        text: '1. Flooded Deep-Cycle Lead-Acid (FLA)'
+      },
+      {
+        type: 'paragraph',
+        text: 'The traditional entry-level battery. Flooded lead-acid cells contain liquid sulfuric acid electrolyte requiring regular topping off with distilled water and vented battery boxes to expel off-gassed hydrogen.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Usable Depth of Discharge (DoD): 50% max (Discharging deeper damages cell life)',
+          'Cycle Life: 300 to 500 cycles',
+          'Best For: Tight initial budgets with accessible maintenance spaces.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: '2. Sealed AGM (Absorbed Glass Mat) Batteries'
+      },
+      {
+        type: 'paragraph',
+        text: 'AGM batteries trap liquid electrolyte inside porous fiberglass mats, rendering the battery spill-proof, maintenance-free, and resistant to heavy vibration.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Usable DoD: 50% to 70%',
+          'Cycle Life: 500 to 800 cycles',
+          'Best For: Boat engine starting, basic emergency UPS backups, and off-road vehicles.'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: '3. Gel Cell Lead-Acid Batteries'
+      },
+      {
+        type: 'paragraph',
+        text: 'Silica additives turn the electrolyte acid into a thick, immobile jelly. Gel batteries excel in hot ambient temperatures and deep discharge recovery, but require slow, precise charge controller voltages to prevent internal bubble pockets.'
+      },
+      {
+        type: 'heading2',
+        text: '4. Lithium Iron Phosphate (LiFePO4) - The Solar & Off-Grid Leader'
+      },
+      {
+        type: 'paragraph',
+        text: 'Lithium Iron Phosphate (LiFePO4) has revolutionized renewable energy storage. Unlike standard NMC lithium-ion batteries found in smartphones, LiFePO4 cells are inherently fire-safe and non-combustible due to their iron-phosphate chemical bonds.'
+      },
+      {
+        type: 'list',
+        items: [
+          'Usable DoD: 80% to 100% usable capacity without cell degradation',
+          'Cycle Life: 3,500 to 6,000+ full cycles (Lasts 10 to 15+ years)',
+          'Weight: 60% lighter than equivalent lead-acid battery banks',
+          'Voltage Stability: Maintains a flat 12.8V-13.2V discharge curve until nearly empty!'
+        ]
+      },
+      {
+        type: 'heading2',
+        text: '5. Next-Gen Sodium-Ion & Solid-State Batteries'
+      },
+      {
+        type: 'paragraph',
+        text: 'Emerging Sodium-ion batteries replace scarce lithium with abundant sea salt minerals, performing exceptionally well in freezing sub-zero environments down to -20°C (-4°F). Meanwhile, Solid-State batteries replace flammable liquid electrolytes with solid ceramic layers, promising double the energy density for future electric vehicles.'
+      }
+    ]
   }
 ];
+
