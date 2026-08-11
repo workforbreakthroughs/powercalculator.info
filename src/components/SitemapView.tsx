@@ -40,6 +40,9 @@ export const SitemapView: React.FC<SitemapViewProps> = ({
           <button onClick={() => setCurrentView('home')} className="p-2.5 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-lg text-left hover:text-stone-900 font-bold transition">
             Home Page
           </button>
+          <button onClick={() => setCurrentView('battery-life-calculator')} className="p-2.5 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-lg text-left text-amber-900 font-extrabold transition">
+            🔋 Battery Life Calculator (Flagship)
+          </button>
           <button onClick={() => setCurrentView('directory')} className="p-2.5 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-lg text-left hover:text-stone-900 font-bold transition">
             All Calculators Directory (100+)
           </button>

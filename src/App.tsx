@@ -22,8 +22,9 @@ import { ContactView } from './pages/ContactView';
 import { SeoAuditView } from './pages/SeoAuditView';
 import { ArticlesView } from './pages/ArticlesView';
 import { AffiliateHubView } from './pages/AffiliateHubView';
+import { BatteryLifeCalculatorView } from './pages/BatteryLifeCalculatorView';
 
-import { Zap, Sparkles, ArrowRight, ShieldCheck, Layers, BookOpen, Search, Star } from 'lucide-react';
+import { Zap, Sparkles, ArrowRight, ShieldCheck, Layers, BookOpen, Search, Star, BatteryCharging } from 'lucide-react';
 
 export default function App() {
   // Navigation State
@@ -95,6 +96,9 @@ export default function App() {
     if (currentView === 'calculator' && activeCalculator) {
       params.set('calc', activeCalculator.id);
       title = `${activeCalculator.title} - VoltCalc`;
+    } else if (currentView === 'battery-life-calculator') {
+      params.set('view', 'battery-life-calculator');
+      title = 'Battery Life Calculator — Estimate & Compare Device Battery Runtime';
     } else if (currentView === 'directory' && selectedCategory) {
       params.set('category', selectedCategory);
       title = `${selectedCategory.toUpperCase().replace('-', ' ')} Calculators - VoltCalc`;
@@ -303,7 +307,7 @@ export default function App() {
               <div className="space-y-2 max-w-2xl relative z-10">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold tracking-wide uppercase backdrop-blur-md">
                   <Zap className="w-3.5 h-3.5 fill-current" />
-                  <span>Flagship Interactive Tool</span>
+                  <span>Flagship Interactive Tool #1</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                   Whole-House Power Planner & Load Sizer
@@ -320,6 +324,29 @@ export default function App() {
                 className="px-6 py-3.5 bg-slate-950 hover:bg-slate-900 text-amber-400 font-black rounded-2xl shadow-lg transition flex items-center gap-2 cursor-pointer border border-amber-400/30 text-sm shrink-0"
               >
                 <span>Launch Power Planner</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </section>
+
+            {/* Flagship #2: Battery Life Calculator Promo Banner */}
+            <section className="bg-gradient-to-r from-slate-900 via-slate-950 to-stone-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-slate-800">
+              <div className="space-y-2 max-w-2xl relative z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold tracking-wide uppercase border border-amber-500/30">
+                  <BatteryCharging className="w-3.5 h-3.5" />
+                  <span>FLAGSHIP TOOL #2 — NEW</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  Battery Life Calculator & Device Comparison
+                </h2>
+                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                  How long will your phone, laptop, tablet, smartwatch, gaming handheld, or power station actually last? Select your exact device brand and model, adjust usage profiles, estimate real-world runtime, and compare 2 devices side-by-side.
+                </p>
+              </div>
+              <button
+                onClick={() => setCurrentView('battery-life-calculator')}
+                className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-2xl shadow-lg transition flex items-center gap-2 cursor-pointer text-sm shrink-0"
+              >
+                <span>Choose Your Device</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </section>
@@ -438,7 +465,36 @@ export default function App() {
           </div>
         )}
 
-        {/* VIEW 2: SINGLE CALCULATOR DETAIL VIEW */}
+        {/* VIEW 2: FLAGSHIP BATTERY LIFE CALCULATOR */}
+        {currentView === 'battery-life-calculator' && (
+          <BatteryLifeCalculatorView
+            userPrefs={userPrefs}
+            onNavigateToCalc={(calcId, inputs) => {
+              const calc = allCalculators.find((c) => c.id === calcId || c.slug === calcId);
+              if (calc) {
+                if (inputs) {
+                  const calcWithInputs = {
+                    ...calc,
+                    inputs: calc.inputs.map((inp) =>
+                      inputs[inp.id] !== undefined ? { ...inp, defaultValue: inputs[inp.id] } : inp
+                    ),
+                  };
+                  handleSelectCalculator(calcWithInputs);
+                } else {
+                  handleSelectCalculator(calc);
+                }
+              } else {
+                setCurrentView('directory');
+              }
+            }}
+            onNavigateToArticles={(slug) => {
+              if (slug) setSelectedArticleSlug(slug);
+              setCurrentView('articles');
+            }}
+          />
+        )}
+
+        {/* VIEW 3: SINGLE CALCULATOR DETAIL VIEW */}
         {currentView === 'calculator' && activeCalculator && (
           <InteractiveCalculator
             calculator={activeCalculator}

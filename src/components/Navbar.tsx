@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Zap, Search, Settings, Eye, BookOpen, Layers, Info, LayoutGrid, Sparkles } from 'lucide-react';
+import { Zap, Search, Settings, Eye, BookOpen, Layers, Info, LayoutGrid, Sparkles, BatteryCharging } from 'lucide-react';
 import { UserPreferences } from '../types';
 
 interface NavbarProps {
@@ -120,6 +120,18 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
 
           <button
+            onClick={() => setCurrentView('battery-life-calculator')}
+            className={`px-3 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer font-bold ${
+              currentView === 'battery-life-calculator'
+                ? 'bg-amber-500 text-slate-950 font-black shadow-sm'
+                : 'bg-slate-900 text-amber-400 hover:bg-slate-800'
+            }`}
+          >
+            <BatteryCharging className="w-4 h-4 text-amber-400" />
+            <span>Battery Life</span>
+          </button>
+
+          <button
             onClick={() => { setCurrentView('directory'); setSelectedCategory(null); }}
             className={`px-3 py-2 rounded-lg transition flex items-center gap-1.5 cursor-pointer ${
               currentView === 'directory' ? 'bg-stone-800 text-white font-semibold' : 'text-stone-600 hover:text-stone-900 hover:bg-stone-100'
@@ -198,6 +210,17 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Zap className="w-4 h-4 fill-current text-slate-950" />
               <span>Launch Power Planner Tool</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setCurrentView('battery-life-calculator');
+                setIsMobileMenuOpen(false);
+              }}
+              className="p-2.5 rounded-lg bg-slate-900 text-amber-400 font-bold text-left flex items-center gap-2 col-span-2"
+            >
+              <BatteryCharging className="w-4 h-4 text-amber-400" />
+              <span>Battery Life Calculator</span>
             </button>
 
             <button

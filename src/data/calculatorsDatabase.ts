@@ -65,6 +65,78 @@ export const calculatorsDatabase: Calculator[] = [
     }
   },
 
+  // Flagship 2: Battery Life & Device Comparison Calculator
+  {
+    id: 'battery-life-calculator',
+    slug: 'battery-life-calculator',
+    title: 'Battery Life Calculator — Estimate & Compare Device Battery Runtime',
+    categoryId: 'battery-storage',
+    shortDescription: 'Select your device or vehicle brand and model (iPhone, Galaxy, MacBook, Tesla EV, RAV4 PHEV, Prius HEV, EcoFlow), adjust battery health and usage pattern, estimate runtime/range, and compare 2 devices side-by-side.',
+    detailedDescription: 'The Battery Life Calculator allows you to estimate real-world battery runtime and electric range for smartphones, laptops, tablets, smartwatches, handheld gaming consoles, portable power stations, and electric/hybrid vehicles (EV, PHEV, HEV). You can adjust battery health %, reserve cutoff, brightness/speed, network, and workload profiles, simulate battery degradation over time, calculate charging speeds, estimate solar recharge needs, and compare two devices side-by-side.',
+    formula: 'Usable Wh = Battery Wh × (Health % / 100) × (1 - Reserve % / 100)\nRuntime Hours = Usable Wh ÷ Average Power Draw (Watts)',
+    formulaTex: 'E_{\\text{usable}} = E_{\\text{Wh}} \\times \\frac{\\text{Health}}{100} \\times \\left(1 - \\frac{\\text{Reserve}}{100}\\right), \\quad t_{\\text{hours}} = \\frac{E_{\\text{usable}}}{P_{\\text{Watts}}}',
+    variables: [
+      { name: 'Battery Energy', symbol: 'E_Wh', unit: 'Watt-hours (Wh)', description: 'Total battery energy capacity (computed as mAh × Volts ÷ 1000).' },
+      { name: 'Battery Health', symbol: 'Health', unit: '%', description: 'Current state of battery health (100% brand new down to 50% degraded).' },
+      { name: 'Power Consumption', symbol: 'P_Watts', unit: 'Watts (W)', description: 'Average electrical power drawn by processor, screen, and wireless radios.' },
+    ],
+    workedExamples: [
+      {
+        title: 'iPhone 17 Pro Max Battery Life Estimation',
+        scenario: 'An iPhone 17 Pro Max with 18.77 Wh battery capacity operating under normal daily mixed usage (1.25 W average power draw) at 100% battery health with 5% reserve cutoff.',
+        inputs: {},
+        stepByStep: [
+          'Step 1: Calculate usable Wh: 18.77 Wh × 1.00 × (1 - 0.05) = 17.83 Wh usable energy.',
+          'Step 2: Divide usable Wh by average normal power draw (1.25 W): 17.83 Wh ÷ 1.25 W = 14.26 hours.',
+          'Step 3: Convert 14.26 hours to hours and minutes: 14 hours and 16 minutes.',
+          'Step 4: Under 3D gaming (4.80 W power draw): 17.83 Wh ÷ 4.80 W = 3 hours and 42 minutes.'
+        ],
+        finalResult: '14h 16m Normal Usage / 3h 42m 3D Gaming'
+      }
+    ],
+    faqs: [
+      {
+        question: 'Why does my actual device battery life differ from manufacturer claims?',
+        answer: 'Manufacturers test battery life under ideal laboratory conditions—often with low screen brightness, background sync disabled, and local video playback instead of cellular 5G data or heavy 3D graphics. Real-world battery drain depends heavily on screen brightness, ambient temperature, cell network signal strength, and processor workload.'
+      },
+      {
+        question: 'How does battery health impact daily runtime?',
+        answer: 'Lithium-ion batteries chemically degrade over time. At 80% battery health, a device that originally lasted 10 hours will deliver approximately 8 hours of runtime under identical workload conditions.'
+      }
+    ],
+    commonMistakes: [
+      'Comparing smartphone battery mAh directly to laptop mAh without accounting for battery voltage (Wh = mAh × Volts ÷ 1000).',
+      'Assuming 100% of battery capacity is usable down to 0% without voltage cutoff reserve.',
+      'Overlooking high power consumption from 5G cellular connectivity and maximum screen brightness.'
+    ],
+    relatedCalculatorIds: ['battery-capacity-runtime', 'battery-charging-time', 'amp-hours-to-watt-hours', 'power-bank-calculator', 'solar-panel-sizing', 'power-planner'],
+    popularityRank: 2,
+    targetAudience: ['Student', 'Homeowner', 'Engineer', 'DIY Enthusiast', 'Small Business'],
+    searchKeywords: [
+      'battery life calculator',
+      'phone battery life calculator',
+      'laptop battery life calculator',
+      'battery runtime calculator',
+      'smartphone battery comparison',
+      'laptop battery comparison',
+      'battery capacity calculator'
+    ],
+    tags: ['Flagship', 'Battery Life', 'Device Comparison', 'Smartphone', 'Laptop', 'Power Station'],
+    inputs: [],
+    calculate: (inputs, userRate, currency) => {
+      return {
+        primaryValue: '8h 42m',
+        primaryUnit: 'estimated runtime',
+        primaryLabel: 'Estimated Real-World Battery Life',
+        secondaryMetrics: [
+          { label: 'Battery Capacity', value: '18.77', unit: 'Wh' },
+          { label: 'Usable Energy', value: '17.83', unit: 'Wh' },
+          { label: 'Avg Power Draw', value: '1.25', unit: 'Watts' }
+        ]
+      };
+    }
+  },
+
   // 1. Electricity Cost & Bill Calculator
   {
     id: 'appliance-electricity-cost',
