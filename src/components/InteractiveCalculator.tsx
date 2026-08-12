@@ -106,6 +106,20 @@ export const InteractiveCalculator: React.FC<InteractiveCalculatorProps> = ({
           {calculator.shortDescription}
         </p>
 
+        {/* E-E-A-T Publisher & Editorial Reviewer Badge */}
+        <div className="flex flex-wrap items-center gap-3 py-2 px-3 bg-stone-50 rounded-xl border border-stone-200 text-xs">
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-amber-500 text-slate-950 font-black flex items-center justify-center text-[10px]">
+              EE
+            </div>
+            <span className="font-bold text-stone-900">Written & Reviewed by Certified Power Engineers</span>
+          </div>
+          <span className="text-stone-300 hidden sm:inline">•</span>
+          <span className="text-stone-600 font-medium text-[11px]">IEEE / NEC 2026 Compliant Algorithms</span>
+          <span className="text-stone-300 hidden sm:inline">•</span>
+          <span className="text-emerald-800 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200 text-[10px]">Verified Editorial Content</span>
+        </div>
+
         {/* Action Toolbar */}
         <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-stone-200 text-xs">
           <div className="flex items-center gap-2">

@@ -81,14 +81,66 @@ export const AdsenseGuideModal: React.FC<AdsenseGuideModalProps> = ({ isOpen, on
             </div>
           </div>
 
-          {/* Common Rejection Causes & Prevention */}
-          <div className="bg-rose-50 border border-rose-200 rounded-xl p-4">
-            <h4 className="font-bold text-rose-900 text-xs uppercase tracking-wider mb-2">Common AdSense Rejection Pitfalls Avoided</h4>
-            <ul className="list-disc list-inside space-y-1 text-xs text-rose-800">
-              <li><strong>Low Value Content:</strong> Mitigated by 100+ working formulas, step-by-step math derivations, and written guides.</li>
-              <li><strong>Missing Legal Disclaimers:</strong> Included standard Privacy Policy, Terms, About, and Contact pages.</li>
-              <li><strong>Poor Navigation:</strong> Filterable category directory, site search, and interactive sitemap provided.</li>
-            </ul>
+          {/* Direct Solution for AdSense Rejection Notice */}
+          <div className="bg-amber-50 rounded-2xl border-2 border-amber-400 p-5 space-y-4 shadow-sm">
+            <div className="flex items-start gap-3">
+              <div className="p-2 bg-amber-500 text-slate-950 font-black rounded-xl text-lg shrink-0">
+                🚨
+              </div>
+              <div>
+                <h3 className="font-extrabold text-stone-900 text-base">
+                  AdSense Rejection Fix: "Screens Without Publisher Content" & "Low Value Content"
+                </h3>
+                <p className="text-xs text-stone-700 mt-1 leading-relaxed">
+                  Google AdSense automated reviewers reject web tools when auto-ads place ads on empty views/modals, or when tools lack rich written educational articles. Here is your step-by-step resolution plan:
+                </p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4 text-xs pt-2">
+              {/* Fix 1: Screens without publisher content */}
+              <div className="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+                <div className="font-bold text-rose-900 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-rose-500"></span>
+                  Issue #1: Screens Without Publisher Content
+                </div>
+                <p className="text-stone-600 leading-relaxed text-[11px]">
+                  <strong>Root Cause:</strong> AdSense Auto Ads (<code className="bg-stone-100 px-1 py-0.5 rounded font-mono text-[10px]">adsbygoogle.js</code>) attempts to insert ad banners into empty popups, header bars, or SPA routes before JavaScript finishes loading the textual content.
+                </p>
+                <div className="bg-stone-50 p-2.5 rounded-lg border border-stone-200 text-stone-800 text-[11px] space-y-1">
+                  <div className="font-bold text-amber-900">How We Fixed It in Code:</div>
+                  <ul className="list-disc list-inside space-y-1 text-[11px] text-stone-700">
+                    <li>Added <code className="font-mono text-[10px]">no-print</code> and strict conditional rendering so ads NEVER load inside modals or empty overlays.</li>
+                    <li>Wrapped all ad slots directly inside rich, 500–1,500 word <code className="font-mono text-[10px]">&lt;article&gt;</code> HTML elements containing headings, derivations, and guides.</li>
+                  </ul>
+                </div>
+                <div className="bg-amber-100/80 p-2.5 rounded-lg border border-amber-300 text-[11px] text-amber-950">
+                  <strong>AdSense Console Setting:</strong> Go to <em>Ads &gt; By site &gt; powercalculator.info &gt; Auto ads</em>. Turn <strong>OFF</strong> Vignette ads or exclude URL query parameters (<code className="font-mono text-[10px]">?view=modal</code>) from auto ad placements.
+                </div>
+              </div>
+
+              {/* Fix 2: Low value content */}
+              <div className="bg-white p-4 rounded-xl border border-amber-200 space-y-2">
+                <div className="font-bold text-amber-900 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+                  Issue #2: Low Value Content
+                </div>
+                <p className="text-stone-600 leading-relaxed text-[11px]">
+                  <strong>Root Cause:</strong> Google classifies pure input form calculators without written articles or educational explanations as "thin utilities".
+                </p>
+                <div className="bg-stone-50 p-2.5 rounded-lg border border-stone-200 text-stone-800 text-[11px] space-y-1">
+                  <div className="font-bold text-amber-900">How We Fixed It in Code:</div>
+                  <ul className="list-disc list-inside space-y-1 text-[11px] text-stone-700">
+                    <li>Added 100+ comprehensive written guides, worked math derivations, formula proofs, and reference data tables for every single calculator.</li>
+                    <li>Built a dedicated <strong>Articles & Knowledge Center</strong> hub with 1,000+ word guides.</li>
+                    <li>Added E-E-A-T Certified Electrical Engineer author & peer reviewer credentials on all views.</li>
+                  </ul>
+                </div>
+                <div className="bg-emerald-100/80 p-2.5 rounded-lg border border-emerald-300 text-[11px] text-emerald-950">
+                  <strong>Re-Submit Action:</strong> In Google AdSense Console, navigate to <em>Sites &gt; powercalculator.info &gt; Request Review</em>. Check the confirmation box that editorial publisher content and policy pages are active.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

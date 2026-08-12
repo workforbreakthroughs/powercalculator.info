@@ -64,9 +64,6 @@ export const SitemapView: React.FC<SitemapViewProps> = ({
           <button onClick={() => setCurrentView('contact')} className="p-2.5 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-lg text-left hover:text-stone-900 font-bold transition">
             Contact & Support
           </button>
-          <button onClick={() => setCurrentView('seo-audit')} className="p-2.5 bg-stone-50 hover:bg-stone-100 border border-stone-200 rounded-lg text-left hover:text-stone-900 font-bold transition">
-            SEO & Schema Audit Console
-          </button>
         </div>
       </div>
 
